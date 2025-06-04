@@ -1,11 +1,11 @@
 import React from 'react';
 import { User, BookOpen, Clock, Award } from 'lucide-react';
 
-interface AreaDoAlunoPageProps {
+interface StudentAreaPageProps {
   user: { firstName: string; lastName: string; email: string };
 }
 
-export default function AreaDoAlunoPage({ user }: AreaDoAlunoPageProps) {
+export default function StudentAreaPage({ user }: StudentAreaPageProps) {
   return (
     <div className="space-y-6">
       <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">

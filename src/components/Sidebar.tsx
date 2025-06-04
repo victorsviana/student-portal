@@ -1,5 +1,7 @@
 import React from 'react';
 import { Home, User, FileText, X } from 'lucide-react';
+import UNISPLogo from '../../public/unisp_logo.svg';
+import Image from 'next/image';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -11,7 +13,8 @@ interface SidebarProps {
 const menuItems = [
   { name: 'Página Inicial', href: '/', icon: Home },
   { name: 'Área do Aluno', href: '/area-do-aluno', icon: User },
-  { name: 'Documentos', href: '/documentos', icon: FileText }
+  { name: 'Documentos', href: '/documentos', icon: FileText },
+  { name: 'Suporte', href: '/suporte', icon: User },
 ];
 
 export default function Sidebar({ isOpen, onClose, currentPage, setCurrentPage }: SidebarProps) {
@@ -28,14 +31,21 @@ export default function Sidebar({ isOpen, onClose, currentPage, setCurrentPage }
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         md:translate-x-0 md:static md:z-auto
       `}>
-        <div className="flex items-center justify-between p-4 border-b border-gray-800">
-          <h1 className="text-xl font-bold text-yellow-400">Portal do Aluno</h1>
-          <button
-            onClick={onClose}
-            className="md:hidden p-1 rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            <X className="h-5 w-5 text-gray-400" />
-          </button>
+        <div className="flex justify-center p-4 border-b border-gray-800">
+          <div className='flex flex-col items-center space-y-2'>
+            <div className="flex items-center justify-center h-40 w-40">
+              <Image src={UNISPLogo} alt="UNISP Logo" className="h-40 w-auto" />
+            </div>
+            <div className="flex items-center space-x-2 w-full">
+              <h1 className="text-xl font-bold text-yellow-400">Portal do Aluno</h1>
+              <button
+                onClick={onClose}
+                className="md:hidden p-1 rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                <X className="h-5 w-5 text-gray-400" />
+              </button>
+            </div>
+          </div>
         </div>
         <nav className="mt-6 px-4">
           <ul className="space-y-2">

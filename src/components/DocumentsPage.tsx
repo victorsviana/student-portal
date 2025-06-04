@@ -32,7 +32,7 @@ const documentos = [
   }
 ];
 
-export default function DocumentosPage() {
+export default function DocumentsPage() {
   return (
     <div className="space-y-6">
       <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">

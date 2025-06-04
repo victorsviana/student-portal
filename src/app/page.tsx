@@ -2,8 +2,8 @@
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import HomePage from "../components/HomePage";
-import AreaDoAlunoPage from "../components/AreaDoAlunoPage";
-import DocumentosPage from "../components/DocumentosPage";
+import StudentAreaPage from "@/components/StudentAreaPage";
+import DocumentsPage from "@/components/DocumentsPage";
 import React, { useState } from "react";
 
 const mockUser = {
@@ -23,9 +23,9 @@ export default function PortalPage() {
       case "/":
         return <HomePage user={mockUser} />;
       case "/area-do-aluno":
-        return <AreaDoAlunoPage user={mockUser} />;
+        return <StudentAreaPage user={mockUser} />;
       case "/documentos":
-        return <DocumentosPage />;
+        return <DocumentsPage />;
       default:
         return <HomePage user={mockUser} />;
     }
