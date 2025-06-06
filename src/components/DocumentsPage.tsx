@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FileText, Eye, Download } from 'lucide-react';
 
 const documentos = [
@@ -33,6 +33,8 @@ const documentos = [
 ];
 
 export default function DocumentsPage() {
+  const userId = 1; // Em um cenário real, pegue do contexto/auth (ex: session.user.id)
+
   return (
     <div className="space-y-6">
       <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
@@ -63,13 +65,34 @@ export default function DocumentsPage() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
+                  {/* Visualizar PDF */}
+                  <a
+                    href={`/pages/api/generate-pdf?userId=${userId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400"
+                    title="Visualizar PDF"
+                  >
+                    <Eye className="h-4 w-4" />
+                  </a>
+                  {/* Baixar (forçar download) */}
+                  <a
+                    href={`/pages/api/generate-pdf?userId=${userId}`}
+                    download={`usuario-${userId}.pdf`}
+                    className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400"
+                    title="Baixar PDF"
+                  >
+                    <Download className="h-4 w-4" />
+                  </a>
+                </div>
+                {/* <div className="flex items-center space-x-2">
                   <button className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400">
                     <Eye className="h-4 w-4" />
                   </button>
                   <button className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400">
                     <Download className="h-4 w-4" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
