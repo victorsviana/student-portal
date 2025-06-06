@@ -67,7 +67,7 @@ export default function DocumentsPage() {
                 <div className="flex items-center space-x-2">
                   {/* Visualizar PDF */}
                   <a
-                    href={`/pages/api/generate-pdf?userId=${userId}`}
+                    href={`/api/generate-pdf?userId=${userId}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400"
@@ -77,7 +77,7 @@ export default function DocumentsPage() {
                   </a>
                   {/* Baixar (forçar download) */}
                   <a
-                    href={`/pages/api/generate-pdf?userId=${userId}`}
+                    href={`/api/generate-pdf?userId=${userId}`}
                     download={`usuario-${userId}.pdf`}
                     className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-400 hover:text-yellow-400"
                     title="Baixar PDF"
