@@ -7,6 +7,7 @@ import DocumentsPage from "@/components/DocumentsPage";
 import SupportPage from "@/components/SupportPage";
 import React, { useState } from "react";
 
+// TODO: Criar rota em api/ para buscar dados do user logado
 const mockUser = {
   firstName: "João",
   lastName: "Silva",

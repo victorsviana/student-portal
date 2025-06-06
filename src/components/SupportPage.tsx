@@ -37,7 +37,7 @@ export default function SupportPage() {
         <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center text-center">
           <Mail className="h-8 w-8 text-yellow-400 mb-2" />
           <h2 className="text-lg font-semibold text-white">E-mail</h2>
-          <p className="text-gray-300 text-sm">suporte@faculdade.edu.br</p>
+          <p className="text-gray-300 text-sm">suporte@faculdadeunisp.edu.br</p>
         </div>
         <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center text-center">
           <Phone className="h-8 w-8 text-yellow-400 mb-2" />

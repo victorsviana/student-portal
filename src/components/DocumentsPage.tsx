@@ -33,7 +33,8 @@ const documentos = [
 ];
 
 export default function DocumentsPage() {
-  const userId = 1; // Em um cenário real, pegue do contexto/auth (ex: session.user.id)
+  // TODO: Adicionar autenticação para conseguir pegar o ID do user
+  const userId = 2; // Em um cenário real, pegue do contexto/auth (ex: session.user.id)
 
   return (
     <div className="space-y-6">
@@ -45,6 +46,18 @@ export default function DocumentsPage() {
           Você está na página de documentos. Aqui você pode visualizar e baixar seus documentos acadêmicos.
         </p>
       </div>
+      <button
+        className="mt-2 inline-flex items-center bg-yellow-400 text-gray-900 px-5 py-3 rounded-md text-md font-large hover:bg-yellow-500"
+      >
+        <a
+          href={`/api/generate-pdf?userId=${userId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Baixar Solicitação"
+        >
+          Solicitar Declaração de Matrícula
+        </a>
+      </button>
       <div className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-800">
           <h2 className="text-lg font-semibold text-white flex items-center">
