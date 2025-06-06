@@ -11,7 +11,10 @@ const mockUser = {
   lastName: "Silva",
   email: "joao.silva@email.com",
   createdAt: "2024-01-15",
-  imageUrl: "/api/placeholder/40/40"
+  imageUrl: "/api/placeholder/40/40",
+  course: "Engenharia Civil",
+  progress: 55,
+  registration: 234827
 };
 
 export default function PortalPage() {

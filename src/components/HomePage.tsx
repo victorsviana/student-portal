@@ -73,10 +73,10 @@ export default function HomePage({ user }: HomePageProps) {
   ];
 
   const importantDays = [
-    { day: 8, event: "Prova Final", type: "prova" },
-    { day: 15, event: "Entrega TCC", type: "entrega" },
-    { day: 22, event: "Seminário", type: "evento" },
-    { day: 28, event: "Reposição", type: "reposicao" }
+    { day: getFutureDate(5), event: "Prova Final", type: "prova" },
+    { day: getFutureDate(15), event: "Entrega TCC", type: "entrega" },
+    { day: getFutureDate(20), event: "Seminário", type: "evento" },
+    { day: getFutureDate(22), event: "Reposição", type: "reposicao" }
   ];
 
   const getStatusIcon = (status: string) => {
@@ -210,7 +210,10 @@ export default function HomePage({ user }: HomePageProps) {
 
           {/* Dias do mês (exemplo para julho) */}
           {Array.from({ length: 30 }, (_, i) => i + 1).map(day => {
-            const event = importantDays.find(e => e.day === day);
+            const event = importantDays.find(e => {
+              const eventDay = Number(e.day.split('/')[0]);
+              return eventDay === day;
+            });
             return (
               <div
                 key={day}
