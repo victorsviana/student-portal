@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import HomePage from "../components/HomePage";
 import StudentAreaPage from "@/components/StudentAreaPage";
 import DocumentsPage from "@/components/DocumentsPage";
+import SupportPage from "@/components/SupportPage";
 import React, { useState } from "react";
 
 const mockUser = {
@@ -29,6 +30,8 @@ export default function PortalPage() {
         return <StudentAreaPage user={mockUser} />;
       case "/documentos":
         return <DocumentsPage />;
+      case "/suporte":
+        return <SupportPage />;
       default:
         return <HomePage user={mockUser} />;
     }
